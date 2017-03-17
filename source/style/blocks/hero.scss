@@ -1,0 +1,203 @@
+.hero {
+    position: relative;
+    margin: 0 auto;
+    height: 100vh;
+    min-height: 650px;
+
+    &_welcome {
+        overflow: hidden;
+
+        .hero__bg {
+            height: calc(100vh + 185px);
+        }
+    }
+
+    &__container {
+        @include centered(y);
+        left: 0;
+        right: 0;
+
+        &_welcome {
+            width: 380px;
+            margin: 0 auto;
+            height: 100%;
+
+            @include phone {
+                width: 100%;
+                //padding: 0 10px;
+            }
+
+            &.flipped .hero__container-front {
+                transform: translateY(-50%) rotateY(-180deg);
+            }
+
+            &.flipped .hero__container-back {
+                transform: translateY(-50%) rotateY(0);
+            }
+        }
+
+        &-front, &-back {
+            @include centered(y);
+            //position: absolute;
+            left: 0;
+            width: 100%;
+            //height: 100%;
+            backface-visibility: hidden;
+            transition: transform 0.3s;
+
+            @include phone {
+                padding: 0 10px;
+            }
+        }
+
+        &-back {
+            transform: translateY(-50%) rotateY(-180deg);
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        //background: url("../img/night_no_bg_big.png") no-repeat 50% 100%;
+        background: url("../img/night_no_bg.png") no-repeat 50% 100%;
+        height: calc(100vh + 185px);
+        min-height: 650px;
+        //left: 50%;
+        //width: 3000px;
+        //margin-left: -1500px;
+        background-size: cover;
+        width: 110%;
+        margin-left: -5%;
+
+        @include tablet {
+            height: calc(100vh + 135px);
+        }
+
+        @include phone {
+            height: calc(100vh + 95px);
+        }
+    }
+
+    &__bg-img {
+        //display: block;
+        position: absolute;
+        bottom: 0;
+    }
+
+    &__video {
+
+        &-file {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__section {
+        @include centered(y);
+        text-align: center;
+        left: 0;
+        right: 0;
+        padding: 10px;
+
+        &-pic {
+            width: 100%;
+            max-width: 460px;
+
+            @include tablet {
+                max-width: 280px;
+                margin-top: -70px;
+            }
+        }
+    }
+
+    .button-arrow-down {
+        bottom: 70px;
+        @include centered(x);
+
+        @include tablet {
+            bottom: 50px;
+        }
+    }
+
+    &__copyright {
+        bottom: 40px;
+        @include centered(x);
+        width: 100%;
+
+        @include phone {
+            bottom: 10px;
+        }
+    }
+
+    &__form {
+
+        &-title {
+            @include heading('medium');
+            margin-bottom: 35px;
+
+            @include tablet {
+                font-size: 30px;
+                line-height: (36/30);
+            }
+
+            color: $primary-text-color;
+
+            &::after {
+                background-color: rgba($primary-text-color, 0.5);
+            }
+        }
+
+        &-field {
+            padding-left: 65px;
+            padding-right: 20px;
+            color: rgba($input-text-color, 0.5);
+        }
+
+        .form__error {
+            left: 46px;
+        }
+    }
+
+    &__title {
+        @include heading('large');
+        margin-bottom: 20px;
+    }
+
+    &__socials {
+        position: absolute;
+        left: 30px;
+        top: 30px;
+
+        @include phone {
+            left: 10px;
+            top: 13px;
+
+            .socials__icon_vk {
+                width: 24px;
+                height: 13px;
+            }
+
+            .socials__icon_github {
+                width: 21px;
+                height: 17px;
+            }
+
+            .socials__icon_skype {
+                width: 19px;
+                height: 19px;
+            }
+        }
+
+        .socials__icon {
+            fill: rgba($secondary, 1);
+        }
+    }
+}

@@ -1,0 +1,117 @@
+@mixin desktop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin phone-landscape {
+    @media screen and (max-height: 767px) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin centered($axis: 'both') {
+    position: absolute;
+
+    @if ($axis == 'both') {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @if ($axis == 'x') {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @if ($axis == 'y') {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+%clearfix {
+    &::before,
+    &::after {
+        content: ' ';
+        display: table;
+    }
+
+    &::after {
+        clear: both;
+    }
+}
+
+@mixin heading($size: 'small') {
+    @if ($size == 'small') {
+        font: {
+            family: $font-family;
+            size: 28px;
+            weight: 500;
+        }
+        line-height: (32/28);
+
+        @include tablet {
+            font-size: 21px;
+            line-height: (28/21);
+        }
+    }
+
+    @if ($size == 'medium') {
+        font: {
+            family: $headline-font;
+            size: 35px;
+        }
+        line-height: (41/35);
+        text-transform: uppercase;
+
+        @include tablet {
+            font-size: 30px;
+            line-height: (36/30);
+        }
+
+        @include phone {
+            font-size: 21px;
+            line-height: (28/21);
+        }
+    }
+
+    @if ($size == 'large') {
+        font: {
+            family: $headline-font;
+            size: 63px;
+        }
+        line-height: (66/63);
+        text-transform: uppercase;
+
+        @include tablet {
+            font-size: 49px;
+            line-height: (52/49);
+        }
+
+        @include phone {
+            font-size: 35px;
+            line-height: (42/35);
+        }
+    }
+
+
+}

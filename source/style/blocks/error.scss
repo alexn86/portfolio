@@ -1,0 +1,20 @@
+.error {
+    display: flex;
+    flex-direction: column;
+    background: url("../img/night_no_bg.png") no-repeat 50% 100%;
+    background-size: cover;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+
+    &__message {
+        font-size: 60px;
+        color: $secondary-text-color;
+        flex: 1;
+        background-color: rgba(#fff, 0.85);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

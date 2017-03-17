@@ -1,0 +1,32 @@
+mixin svg(className, id)
+    svg(class=className)
+        use(xlink:href=`/assets/img/sprite.svg#${id}`)
+
+mixin socials(className, items)
+    ul(class=className)
+        each value, key in items
+            li(class=`${className}__item`)
+                a(class=`${className}__link` href=`${value}` target="_blank")
+                    +svg(`${className}__icon ${className}__icon_${key}`, key)
+
+mixin menu(className, items, activeItem)
+    ul(class=`${className}__list`)
+        each item, ndx in items
+            - var modifierClassName= ''
+            if (item.class)
+                each modClass in item.class
+                    - modifierClassName += ` ${className}__item_${modClass}`
+            if(ndx == activeItem)
+                - modifierClassName += ` ${className}__item_active`
+            li(class=`${className}__item` + modifierClassName)
+                a(class=`${className}__link` href=`${item.href ? item.href : '#'}`)= item.name
+
+mixin slider(className, items)
+    ul(class=`${className}__list`)
+        each item in items
+            - var modifierClassName= ''
+            if (item.class)
+                each modClass in item.class
+                    - modifierClassName += ` ${className}__item_${modClass}`
+            li(class=`${className}__item` + modifierClassName)
+                img(class=`${className}__item-pic` src=`${item.image}`)

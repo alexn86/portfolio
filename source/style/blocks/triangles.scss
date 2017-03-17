@@ -1,0 +1,19 @@
+.triangles {
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+
+    &__svg {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    &-about-left {
+        fill: #f2f0e8;
+    }
+
+    &-about-right {
+        fill: #f4f5f0;
+    }
+}

@@ -1,0 +1,121 @@
+.blog {
+    position: relative;
+    padding-bottom: 185px;
+    background-color: #faf8f0;
+
+    @include tablet {
+        padding-bottom: 225px;
+    }
+
+    @include phone {
+        padding-bottom: 355px;
+    }
+
+    &__triangles {
+        &-left, &-right {
+            fill: #faf8f0;
+        }
+    }
+
+    &__main {
+        display: flex;
+        padding: 0 10px;
+        position: relative;
+
+        @include tablet {
+            padding: 0 20px;
+        }
+
+        @include phone {
+            padding: 0 10px;
+        }
+    }
+
+    &__col-left {
+        width: 25%;
+        display: flex;
+        justify-content: flex-end;
+        //padding-top: 100px;
+
+        @include tablet {
+            display: block;
+            position: absolute;
+            //right: 50%;
+            //width: 50%;
+            width: 292px;
+            left: -292px;
+            //left: 0;
+            background-color: rgb(37, 52, 104);
+            box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            z-index: 10;
+            transition: left 0.4s ease-in-out;
+            //padding-top: 50px;
+        }
+
+        @include phone {
+            //padding-top: 30px;
+        }
+
+        &.swipe {
+            left: 0;
+        }
+    }
+
+    &__swipe-area {
+        @include centered(y);
+        border-radius: 50%;
+        background-color: rgb(37, 52, 104);
+        box-shadow: -6px 3px 0px 3px rgb(37, 52, 104),
+                    -6px -3px 0px 3px rgb(37, 52, 104),
+                    3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+        width: 60px;
+        height: 60px;
+        right: -9px;
+        z-index: -999;
+        cursor: pointer;
+        display: none;
+
+        @include tablet {
+            display: block;
+        }
+    }
+
+    &__col-right {
+        width: 75%;
+        padding-top: 100px;
+        position: relative;
+        left: 0;
+        transition: left 0.4s ease-in-out;
+
+        @include tablet {
+            width: 100%;
+            padding-top: 50px;
+        }
+
+        @include phone {
+            padding-top: 30px;
+        }
+
+        &.swipe {
+            left: 292px;
+        }
+    }
+    
+    &__posts {
+        color: $secondary-text-color;
+        margin-left: 120px;
+        max-width: 880px;
+        position: relative;
+
+        @include desktop {
+            margin-left: 100px;
+            max-width: 680px;
+        }
+
+        @include tablet {
+            margin-left: 0;
+            max-width: 100%;
+        }
+    }
+}

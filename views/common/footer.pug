@@ -1,0 +1,16 @@
+footer.footer
+    .footer__top
+        .footer__about Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+        .footer__nav
+            nav.footer-menu
+                +menu('footer-menu', menu)
+            .footer__socials
+                +socials('socials', socialsList)
+        .footer__contacts
+            span.wrap alexnik86
+            span.wrap alexmiem2003@gmail.com
+            span.wrap +7 926 173 77 38
+            span.wrap Москва, ул. Первомайская, д.116
+    .footer__bottom
+        p.footer__copyright.copyright
+            include ../common/_copyright

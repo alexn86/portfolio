@@ -1,0 +1,14 @@
+extends ../_template
+
+block variables
+    - var title = 'Что-то пошло не так'
+
+block content
+
+    .wrapper
+
+        .error
+
+            video(src='assets/img/night.mp4' autoplay muted playsinline loop).hero__video-file
+
+            section.error__message= error.message

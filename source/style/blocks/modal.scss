@@ -1,0 +1,33 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    overflow: hidden;
+    backface-visibility: hidden;
+    //display: none;
+    background-color: rgba(#000, 0.5);
+    visibility: hidden;
+
+    &__container {
+        border-radius: 5px;
+        background: $secondary;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        //text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include centered();
+    }
+
+    &__message {
+        margin-bottom: 20px;
+        color: $secondary-text-color;
+    }
+}

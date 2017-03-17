@@ -1,0 +1,63 @@
+.admin-menu {
+
+
+    &__list {
+        display: flex;
+        background-color: #f0efe9;
+
+        @include phone {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        flex-basis: 180px;
+        //width: 180px;
+        //min-width: 180px;
+        background-color: #f0efe9;
+        text-align: center;
+        border-right: 2px solid $secondary;
+
+        @include tablet {
+            flex: 1;
+            width: auto;
+
+            &:last-of-type {
+                border-right: none;
+            }
+        }
+
+        @include phone {
+            border-right: none;
+            &:not(:last-of-type) {
+                border-bottom: 2px solid $secondary;
+            }
+        }
+    }
+
+    &__item_active {
+        background-color: $primary-text-color;
+
+        .admin-menu__link {
+            color: $primary-mid;
+        }
+    }
+
+    &__link {
+        display: block;
+        line-height: 60px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $secondary-text-color;
+        font-weight: 500;
+        padding: 0 30px;
+
+        @include phone {
+            line-height: 45px;
+        }
+    }
+
+    &__link:hover {
+        background-color: $secondary;
+    }
+}

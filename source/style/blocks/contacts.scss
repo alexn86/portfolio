@@ -1,0 +1,61 @@
+.contacts {
+    @include centered();
+    width: 580px;
+    background-color: rgba($secondary, 0.7);
+    padding: 30px 20px 10px;
+
+    @include tablet {
+        width: 348px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        color: $secondary-text-color;
+
+        &::after {
+            background-color: $secondary-text-color;
+        }
+
+        @include tablet {
+            margin-bottom: 30px !important;
+        }
+
+        @include phone {
+            font-size: 35px !important;
+            line-height: (41/35) !important;
+        }
+    }
+
+    &-list {
+        font-size: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &__item {
+            flex: 1 0 50%;
+            font-size: 1rem;
+            color: rgba($secondary-text-color, 0.8);
+            padding-left: 55px;
+            min-height: 45px;
+            position: relative;
+            vertical-align: top;
+            margin-bottom: 30px;
+            padding-top: 10px;
+
+            @include tablet {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+        &__icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 45px;
+            height: 45px;
+            fill: $primary-mid;
+        }
+    }
+}

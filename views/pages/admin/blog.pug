@@ -1,0 +1,20 @@
+extends _template
+
+block variables
+    - var pageTitle = 'Страница &laquo;Блог&raquo;'
+
+block content
+
+    .admin-blog
+
+        form.admin-blog__form(name="blog")
+
+            .admin-blog__title.page-header Добавить запись
+            input.admin-blog__input.admin-input(name="name" type="text" placeholder="Название" required)
+            input.admin-blog__input.admin-input(name="date" type="text" placeholder="Дата" required)
+            textarea.admin-blog__textarea.admin-input(name="text" placeholder="Содержание" required)
+            input.btn(type="submit" value="Добавить")
+
+
+
+

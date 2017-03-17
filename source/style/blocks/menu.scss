@@ -1,0 +1,85 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //background-color: rgba(#183669, 0.87);
+    z-index: 100;
+    visibility: hidden;
+    overflow: hidden;
+    backface-visibility: hidden;
+
+    &__container {
+        width: 200vw;
+        height: 200vw;
+        background-color: rgba(#183669, 0.87);
+        border-radius: 50%;
+        transition: all 0.4s ease;
+        flex: none;
+        transform: scale(0);
+        backface-visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &_active {
+        visibility: visible;
+
+        .menu__container {
+            transform: scale(1);
+            transition-duration: .5s;
+        }
+    }
+
+    &__list {
+
+    }
+
+    &__item {
+        text-align: center;
+        padding-bottom: 20px;
+        margin-bottom: 50px;
+        position: relative;
+
+        @include phone {
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+    }
+
+    //&__item:hover::after {
+    &__item::after {
+        //@include centered(x);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        content: '';
+        width: 90px;
+        height: 3px;
+        background-color: $secondary;
+        opacity: 0;
+        transition: opacity 0.3s, transform 0.3s;
+        transform: translateX(-50%) translateY(10px);
+
+        @include phone {
+            width: 55px;
+        }
+    }
+
+    &__item:hover::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0px);
+    }
+
+    &__link {
+        @include heading('large');
+        color: $primary-text-color;
+        text-decoration: none;
+    }
+}

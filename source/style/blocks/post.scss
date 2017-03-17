@@ -1,0 +1,51 @@
+.post {
+    margin-bottom: 60px;
+
+    @include tablet {
+        margin-bottom: 40px;
+    }
+
+    @include phone {
+        margin-bottom: 20px;
+    }
+
+    &:not(:last-of-type) {
+        padding-bottom: 55px;
+        border-bottom: 5px solid rgba(#373e42, 0.07);
+
+        @include tablet {
+            padding-bottom: 35px;
+        }
+
+        @include phone {
+            padding-bottom: 15px;
+        }
+    }
+    
+    &__title {
+        @include heading('medium');
+        text-transform: none;
+        margin-bottom: 20px;
+
+        @include tablet {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__date {
+        color: $primary-dark;
+        margin-bottom: 20px;
+
+        @include tablet {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__text {
+        p {
+            margin-bottom: 10px;
+        }
+    }
+
+
+}

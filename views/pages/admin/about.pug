@@ -1,0 +1,20 @@
+extends _template
+
+block variables
+    - var pageTitle = 'Страница &laquo;Обо мне&raquo;'
+
+block content
+
+    .admin-skills
+        form.admin-skills-form(name="skills")
+            ul.admin-skills-group
+                each item in skills
+                    li.admin-skills-group__item
+                        .admin-skills-group__title.page-header= item.group
+                        ul.admin-skills__list
+                            each skill in item.skills
+                                li.admin-skills__item
+                                    .admin-skills__item-name= skill.name
+                                    input.admin-skills__item-input.admin-input(name=`skills[${item.group}][${skill.name}]` type="number" min=0 max=100 step=5 value=skill.value)
+                                    .admin-skills__item-percent %
+            input.btn(type="submit" value="Сохранить")

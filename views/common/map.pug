@@ -1,0 +1,135 @@
+script(type='text/javascript').
+    let map;
+    function initMap() {
+        let myLatlng = {lat: 55.793045, lng: 37.818500},
+            contacts = document.querySelector('.contacts');
+
+        map = new google.maps.Map(document.querySelector('.map'), {
+            //center: {lat: 55.7723207, lng: 37.7384802},
+            center: myLatlng,
+            zoom: 13,
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_TOP
+            },
+            mapTypeControl: false,
+            streetViewControl: false,
+            rotateControl: false,
+            scaleControl: false,
+            scrollwheel: false
+        });
+
+        let marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'Москва, ул. Первомайская, д.116',
+            icon: {
+                url: 'assets/img/map_marker_n.png',
+                scaledSize: new google.maps.Size(34, 42)
+            }
+        });
+
+        map.setCenter({lat: myLatlng.lat+0.01, lng: myLatlng.lng});
+
+        map.addListener('mouseout', function() {
+            contacts.style.display = 'block';
+        });
+
+        map.addListener('dragstart', function () {
+            //contacts.style.display = 'none';
+        });
+
+        //map.addListener('dragend', function () {
+        //    contacts.style.display = 'block';
+        //});
+
+        marker.addListener('click', function () {
+            map.setZoom(18);
+            map.setCenter(marker.getPosition());
+            if (contacts.offsetTop != 0)
+                contacts.style.display = 'none';
+        });
+
+        let styleArray = [
+            {
+                "featureType": "landscape.natural",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#e0efef"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "hue": "#1900ff"
+                    },
+                    {
+                        "color": "#c0e8e8"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "lightness": 100
+                    },
+                    {
+                        "visibility": "simplified"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "labels",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit.line",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "lightness": 700
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [
+                    {
+                        "color": "#7dcdcd"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#4369aa"
+                    }
+                ]
+            }
+        ];
+        map.setOptions({styles: styleArray});
+    }
+script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC_iNMx7Fnasl8uKsn_KYsxWaQQ33c1HoI&callback=initMap' async defer)

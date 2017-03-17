@@ -1,0 +1,86 @@
+.hamburger {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 40px;
+    height: 35px;
+    padding-top: 15px;
+    cursor: pointer;
+    z-index: 200;
+
+    @include phone {
+        right: 10px;
+        top: 10px;
+        width: 25px;
+        height: 21px;
+        padding-top: 9px;
+    }
+
+    &_active {
+        position: fixed;
+    }
+
+    &_active &__icon {
+        //transition-delay: .2s;
+        background-color: transparent;
+    }
+
+    &__icon {
+        transition-duration: 0s;
+        transition-delay: .1s;
+        position: relative;
+    }
+
+    &__icon, &__icon::before, &__icon::after {
+        width: 40px;
+        height: 5px;
+        background-color: #ffffff;
+        display: block;
+        border-radius: 2px;
+
+        @include phone {
+            width: 25px;
+            height: 3px;
+        }
+    }
+
+    &__icon::before, &__icon::after {
+        position: absolute;
+        content: '';
+    }
+
+    &__icon::before {
+        margin-top: -15px;
+        transition-property: margin, transform;
+        transition-duration: .2s;
+        transition-delay: .2s, 0;
+
+        @include phone {
+            margin-top: -9px;
+        }
+    }
+
+    &_active &__icon::before {
+        margin-top: 0;
+        transform: rotate(45deg);
+        transition-delay: 0, .2s;
+    }
+
+    &__icon::after {
+        margin-top: 15px;
+        transition-property: margin, transform;
+        transition-duration: .2s;
+        transition-delay: .2s, 0;
+
+        @include phone {
+            margin-top: 9px;
+        }
+    }
+
+    &_active &__icon::after {
+        margin-top: 0;
+        transform: rotate(-45deg);
+        transition-delay: 0, .2s;
+    }
+}

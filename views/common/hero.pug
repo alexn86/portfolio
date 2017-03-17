@@ -1,0 +1,21 @@
+include ../common/preloader
+header.hero
+    video(src='assets/img/night.mp4' autoplay muted playsinline loop).hero__video-file
+    .hero__bg
+    .hero__section
+        img(src='assets/img/stars.png' alt='').hero__section-pic
+    .hero__container
+        .user
+            .user__avatar-box
+                img.user__avatar(src='assets/img/avatar.png')
+            p.user__name Александр Никольский
+            p.user__title Личный сайт веб разработчика
+    .hero__socials
+        +socials('socials', socialsList)
+    //+svg('button-hamburger','hamburger')
+    a.hamburger(hreg='#')
+        span.hamburger__icon
+    +svg('button-arrow-down','arrow_down')
+    nav.menu
+        .menu__container
+            +menu('menu', menu)

@@ -1,0 +1,62 @@
+.user {
+    text-align: center;
+    position: relative;
+
+    &-container {
+        padding: 40px 20px;
+        background-color: rgba($block-background-color, 0.5);
+    }
+
+    &__avatar-box {
+        height: 140px;
+        width: 140px;
+        border-radius: 50% 50%;
+        overflow: hidden;
+        margin-bottom: 25px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-top: 40px;
+
+        &_welcome {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+}
+
+    &__avatar {
+        width: 100%;
+    }
+
+    &__name {
+        font: {
+            size: 35px;
+            weight: 500;
+            style: normal;
+        }
+        line-height: (41/35);
+        margin-bottom: 5px;
+
+        @include phone {
+            font-size: 21px;
+            line-height: (28/21);
+        }
+
+        &_welcome {
+            font-size: 28px;
+            line-height: (34/28);
+        }
+    }
+
+    &__title {
+        opacity: 0.8;
+        margin-bottom: 30px;
+
+        @include tablet {
+            font-size: 16px;
+        }
+
+        @include phone {
+            font-size: 14px;
+        }
+    }
+}

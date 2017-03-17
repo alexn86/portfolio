@@ -1,0 +1,90 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-Digg-01-32 {
+  background-image: url(../img/sprite.png);
+  background-position: -32px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-Ebay-32 {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -64px;
+  width: 32px;
+  height: 32px;
+}
+.icon-Facebook-32 {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -32px;
+  width: 32px;
+  height: 32px;
+}
+.icon-Google-32 {
+  background-image: url(../img/sprite.png);
+  background-position: -32px -32px;
+  width: 32px;
+  height: 32px;
+}
+.icon-LinkedIn-32 {
+  background-image: url(../img/sprite.png);
+  background-position: -64px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-Pinterest-32 {
+  background-image: url(../img/sprite.png);
+  background-position: -64px -32px;
+  width: 32px;
+  height: 32px;
+}
+.icon-RSS-32 {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-Twitter Bird-32 {
+  background-image: url(../img/sprite.png);
+  background-position: -32px -64px;
+  width: 32px;
+  height: 32px;
+}
+.icon-Vimeo-32 {
+  background-image: url(../img/sprite.png);
+  background-position: -64px -64px;
+  width: 32px;
+  height: 32px;
+}
+.icon-WordPress-32 {
+  background-image: url(../img/sprite.png);
+  background-position: -96px 0px;
+  width: 32px;
+  height: 32px;
+}
+.icon-Yahoo-01-32 {
+  background-image: url(../img/sprite.png);
+  background-position: -96px -32px;
+  width: 32px;
+  height: 32px;
+}
+.icon-YouTube1-32 {
+  background-image: url(../img/sprite.png);
+  background-position: -96px -64px;
+  width: 32px;
+  height: 32px;
+}

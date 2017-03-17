@@ -1,0 +1,41 @@
+.socials {
+    font-size: 0;
+
+    &__item {
+        display: inline-block;
+        vertical-align: middle;
+
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &__icon {
+        vertical-align: middle;
+        fill: rgba($primary-mid, 0.7);
+
+        &:hover {
+            fill: rgba($primary-mid, 1);
+            cursor: pointer;
+        }
+    }
+
+    &__icon_vk {
+        width: 31px;
+        height: 17px;
+    }
+
+    &__icon_github {
+        width: 26px;
+        height: 22px;
+    }
+
+    &__icon_skype {
+        width: 24px;
+        height: 24px;
+    }
+}

@@ -1,0 +1,77 @@
+extends ../_template
+
+block variables
+    - var title = 'Обо мне'
+
+block content
+
+    include ../common/_variables
+
+    .wrapper
+
+        main.content
+
+            include ../common/hero
+
+            section.about
+
+                .about__triangles.triangles
+                    svg(viewBox='0 0 1000 110' preserveAspectRatio='none').triangles__svg
+                        polygon(points='0,0 0,110 500,110').about__triangles-left
+                        polygon(points='500,110 1000,0 1000,110').about__triangles-right
+
+                .about__main
+
+                    .about__col.about__col_left
+
+                        .about__title.section-title Обо мне
+                        .about-info
+                            .about-info__photo
+                                img(src='assets/img/me.jpg').about-info__photo-img
+                            .block-title.about-info__title Кто я
+                            .block-text
+                                | Я веб разработчик из Москвы. Мне 30 лет. Я занимаюсь разработкой современных сайтов и приложений.
+                                | Мне нравится делать интересные и современные проекты.<br><br>
+                                | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+                                | Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+                    .about__col.about__col_right
+
+                        .skills
+                            .block-title.skills__title
+                                span.wrap Чем я могу быть
+                                span.wrap вам полезен
+                            .block-text
+                                | Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать
+                                | не сложные задачи на Backend. Но давайте по порядку.
+                            ul.skills-group
+                                each item in skills
+                                    li.skills-group__item
+                                        p.skills-group__title= item.group
+                                        ul.skills-list
+                                            each skill in item.skills
+                                                li.skills-list__item
+                                                    .skill
+                                                        svg(width='110' height='110').skill__circle
+                                                            circle(r='45' cx='50%' cy='50%' fill='none').skill__circle-first
+                                                            circle(r='45' cx='50%' cy='50%' fill='none' transform="rotate(-90 55 55)" class=`skill__circle-second skill__circle_percent_${skill.value}`)
+                                                        span.skill__name= skill.name
+
+            section.map-container
+                .contacts.map-contacts
+                    .block-title.contacts__title Контакты
+                    ul.contacts-list
+                        li.contacts-list__item alexnik86
+                            +svg('contacts-list__icon','skype_n')
+                        li.contacts-list__item alexmiem2003@gmail.com
+                            +svg('contacts-list__icon','envelope_n')
+                        li.contacts-list__item +7 926 173 77 38
+                            +svg('contacts-list__icon','phone_n')
+                        li.contacts-list__item Москва, ул. Первомайская, д.116
+                            +svg('contacts-list__icon','map_n')
+
+                .map
+
+        include ../common/footer
+
+        include ../common/map

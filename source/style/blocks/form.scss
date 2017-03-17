@@ -1,0 +1,204 @@
+.form {
+    text-align: center;
+
+    &-container {
+        padding: 40px 20px 0;
+        background-color: rgba($secondary, 0.05);
+    }
+
+    &__title {
+        color: $primary-text-color;
+
+        &::after {
+            background-color: rgba($primary-text-color, 0.5);
+        }
+    }
+
+    &__field-group {
+        position: relative;
+    }
+
+    &__field-group:not(:last-of-type) {
+        margin-bottom: 20px;
+    }
+
+    &__error {
+        position: absolute;
+        left: 0;
+        top: 60px;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 5px;
+        padding: 0 20px;
+        background-color: #e44845;
+        z-index: 10;
+    }
+
+    &__error::after {
+        content: '';
+        @include centered(x);
+        top: -10px;
+        width: 0;
+        height: 0;
+        border: 10px solid #e44845;
+        border-bottom-width: 10px;
+        border-top-width: 0;
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }
+
+    &__textfield {
+        height: 45px;
+    }
+
+    &__field {
+        width: 100%;
+        border: none;
+        outline: none;
+        //position: relative;
+    }
+
+
+    &__field:focus {
+       box-shadow: 0px 0px 0px 1px $primary-mid;
+    }
+
+    //&__field:focus + &__error {
+    //    display: none;
+    //}
+
+    &__field.form__field_error {
+        box-shadow: 0px 0px 0px 1px #e44845;
+    }
+
+    &__field:focus + &__icon-container &__icon {
+        fill: $primary-mid;
+    }
+
+    &__field.form__field_error + &__icon-container &__icon  {
+        fill: #e44845;
+    }
+
+    &__textarea {
+        //width: 100%;
+        //border: 0;
+        //outline: none;
+        height: 130px;
+        resize: none;
+    }
+
+    &__icon-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 45px;
+        height: 45px;
+        background-color: #f0efe9;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        fill: #c4cbcd;
+    }
+
+    &__icon-login {
+        width: 15px;
+        height: 17px;
+    }
+
+    &__icon-password {
+        width: 18px;
+        height: 17px;
+    }
+
+    &__checkbox {
+        display: none;
+
+    }
+
+    &__label {
+        position: relative;
+        cursor: pointer;
+        padding-left: 30px;
+        color: rgba($primary-text-color, 0.8);
+    }
+
+    &__checkbox ~ &__label::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 20px;
+        height: 20px;
+        background-color: $primary-mid;
+        border-radius: 2px;
+    }
+
+    &__checkbox ~ &__label::after {
+        width: 12px;
+        height: 9px;
+        position: absolute;
+        content: "";
+        z-index: 2;
+        background: url('../img/check.svg') no-repeat;
+        background-size: cover;
+        left: 4px;
+        top: 6px;
+        display: none;
+    }
+
+    &__checkbox:checked ~ &__label::after {
+        display: block;
+    }
+
+    &__text {
+        color: rgba($primary-text-color, 0.8);
+        margin-top: -10px;
+        margin-bottom: 5px;
+    }
+
+    &__radio {
+        display: none;
+    }
+
+    &__radio ~ &__label::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 20px;
+        height: 20px;
+        background-color: $secondary;
+        border-radius: 50%;
+    }
+
+    &__radio ~ &__label::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        z-index: 2;
+        width: 8px;
+        height: 8px;
+        background-color: $primary-mid;
+        border-radius: 50%;
+        display: none;
+    }
+
+    &__radio:checked ~ &__label::after {
+        display: block;
+    }
+
+    &__field-group-inline {
+        display: inline-block;
+    }
+
+    &__field-group-inline:not(:last-of-type) &__label {
+        padding-right: 40px;
+    }
+}

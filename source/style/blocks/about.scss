@@ -1,0 +1,114 @@
+.about {
+    position: relative;
+
+    &__main {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+
+    &__col {
+        position: relative;
+        flex: 1;
+        padding-top: 20px;
+
+        &_left {
+            background: #f2f0e8;
+            display: flex;
+
+            @include desktop {
+                flex-direction: column;
+            }
+        }
+
+        &_right {
+            background: #f4f5f0;
+        }
+    }
+
+    &__title {
+        flex: 1;
+        align-self: flex-start;
+        color: $secondary-text-color;
+        background: url('../img/stars2.png') center center no-repeat;
+        background-size: contain;
+        padding: 52px 0;
+        margin: -52px 20px 0 0;
+
+        @include desktop {
+            flex: 0;
+            align-self: center;
+            justify-content: center;
+            padding: 24px 0 30px;
+            margin: -24px 0 20px;
+        }
+
+        @include tablet {
+            margin-top: -10px;
+        }
+
+        @include phone {
+            background: none;
+            padding: 0;
+            margin: 10px 0 40px;
+        }
+    }
+
+    &-info {
+        flex: 1;
+        padding-right: 20px;
+        margin-bottom: 40px;
+
+        @include desktop {
+            padding: 0 80px;
+        }
+
+        @include tablet {
+            padding: 0 150px;
+        }
+
+        @include phone {
+            padding: 10px;
+        }
+
+        &__photo {
+            margin: 0 auto 35px;
+
+            @include phone {
+                margin: 0 -10px 30px;
+            }
+        }
+
+        &__photo-img {
+            display: block;
+        }
+
+        &__title {
+            color: $secondary-text-color;
+
+            &::after {
+                background-color: $secondary-text-color;
+            }
+        }
+
+    }
+
+    &__triangles {
+
+        &-left {
+            fill: #f2f0e8;
+        }
+
+        &-right {
+            fill: #f4f5f0;
+
+            @include tablet {
+                fill: #f2f0e8;
+            }
+        }
+    }
+
+}

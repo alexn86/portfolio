@@ -1,0 +1,189 @@
+.footer {
+    width: 100%;
+    height: 185px;
+    text-align: left;
+    color: $primary-text-color;
+    font-weight: 300;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: -185px;
+
+    @include tablet {
+        height: 225px;
+        margin-top: -225px;
+    }
+
+    @include phone {
+        height: 355px;
+        margin-top: -355px;
+    }
+
+    @include phone-landscape {
+        height: 225px;
+        margin-top: -225px;
+    }
+
+    &__top {
+        padding: 20px 30px;
+        display: flex;
+        background-color: rgba($block-background-color, 0.85);
+        height: 100%;
+
+        @include tablet {
+            flex-wrap: wrap;
+            padding: 20px 24px;
+        }
+
+        @include phone {
+            padding: 15px 10px;
+            align-items: flex-start;
+        }
+    }
+
+    &__bottom {
+        margin-top: auto;
+        display: table;
+        width: 100%;
+    }
+
+    &__about {
+        flex: 1;
+        padding-right: 30px;
+        border-right: 1px solid rgba($secondary, 0.2);
+
+        @include desktop {
+            flex-grow: 2;
+        }
+
+        @include tablet {
+            flex-basis: 100%;
+            flex-grow: 1;
+            border-right: none;
+            padding: 0 0 15px;
+            border-bottom: 1px solid rgba($secondary, 0.2);
+            text-align: center;
+
+            .wrap {
+                 display: inline-block;
+             }
+        }
+    }
+
+    &__nav {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px;
+        border-right: 1px solid rgba($secondary, 0.2);
+
+        @include desktop {
+            flex-grow: 3;
+        }
+
+        @include tablet {
+            flex: 1;
+            padding: 15px 15px 0 0;
+            border: 0;
+        }
+
+        @include phone {
+            flex-basis: 100%;
+            text-align: center;
+            padding-right: 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba($secondary, 0.2);
+        }
+
+    }
+
+    &-menu {
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+
+            @include tablet {
+                margin-bottom: 15px;
+            }
+
+            @include phone {
+                //margin-left: auto;
+                //margin-right: auto;
+                justify-content: center;
+            }
+        }
+
+        &__item:not(:last-of-type) {
+            margin-right: 40px;
+
+            @include tablet {
+                margin-right: 30px;
+            }
+
+            @include phone {
+                margin-right: 10px;
+            }
+        }
+
+        &__link {
+            display: block;
+            //font-size: 1rem;
+            font-weight: 500;
+            color: $primary-text-color;
+            text-decoration: none;
+        }
+    }
+
+    &__socials {
+        margin-top: auto;
+
+        .socials__icon {
+            fill: rgba($secondary, 0.5);
+        }
+
+        .socials__icon:hover {
+            fill: rgba($primary-mid, 1);
+        }
+
+        @include tablet {
+            margin: 0;
+        }
+    }
+
+    &__contacts {
+        flex: 1;
+        padding-left: 30px;
+
+        @include tablet {
+            flex: initial;
+            padding: 15px 0 0 0;
+            text-align: right;
+        }
+
+        @include phone {
+            flex: 1;
+            flex-basis: 100%;
+            text-align: center;
+        }
+    }
+
+    &__copyright {
+        position: relative;
+        height: 38px;
+        background-color: rgba($primary-dark, 0.85);
+        display: table-cell;
+        vertical-align: middle;
+
+        @include tablet {
+            height: 34px;
+        }
+
+        @include phone {
+            height: 66px;
+            line-height: inherit;
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}

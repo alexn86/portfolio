@@ -1,0 +1,178 @@
+.reviews {
+    position: relative;
+    background: url('../img/reviews_bg.jpg') 50% 100% no-repeat;
+    background-size: cover;
+    padding-bottom: 185px;
+
+    @include tablet {
+        padding-bottom: 225px;
+    }
+
+    @include phone {
+        padding-bottom: 355px;
+    }
+
+    &__bg {
+        display: block;
+        width: 100%;
+        position: absolute;
+    }
+
+    &__title {
+        @include heading('large');
+        color: $primary-text-color;
+        padding: 70px 0;
+        text-align: center;
+        position: relative;
+
+        @include tablet {
+            padding: 45px 0;
+        }
+
+        @include phone {
+            padding: 35px 0;
+        }
+
+        &::after {
+            content: '';
+            @include centered();
+            background: url('../img/stars3.png') center center no-repeat;
+            height: 202px;
+            width: 173px;
+
+            @include tablet {
+                background: url('../img/stars333.png') center center no-repeat;
+                width: 149px;
+                height: 175px;
+            }
+
+            @include phone {
+                background: url('../img/stars3333.png') center center no-repeat;
+                width: 71px;
+                height: 82px;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        margin-bottom: 60px;
+        justify-content: center;
+
+        @include phone {
+            margin-bottom: 0;
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        font-style: italic;
+        width: 50%;
+        padding: 0 10px;
+        margin-bottom: 35px;
+        max-width: 380px;
+
+        @include tablet {
+            max-width: 350px;
+        }
+
+        @include phone {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    &__avatar-box {
+        height: 80px;
+        width: 80px;
+        border-radius: 50% 50%;
+        overflow: hidden;
+        margin: 0 auto 15px;
+
+        @include phone {
+            width: 50px;
+            height: 50px;
+
+        }
+    }
+
+    &__avatar {
+        width: 100%;
+    }
+
+    &__text {
+        margin-bottom: 25px;
+        position: relative;
+
+        @include tablet {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__text::before {
+        position: absolute;
+        content: '';
+        top: -25px;
+        left: 0;
+        width: 75px;
+        height: 61px;
+        background: url('../img/quote.png') no-repeat;
+    }
+
+    &__author-name {
+        font-weight: bold;
+    }
+
+    &__author-name, &__author-work {
+        text-align: center;
+    }
+
+    &__form-wrapper {
+        width: 380px;
+        margin: 0 auto;
+        padding: 0 10px;
+
+        @include tablet {
+            width: 350px;
+        }
+
+        @include phone {
+            width: 100%;
+            padding: 0 10px;
+        }
+    }
+
+    &__form-container {
+        background-color: rgba($secondary, 0.05);
+    }
+
+    &__form {
+        padding: 40px 20px 20px;
+    }
+
+    &__form-textarea {
+        margin-bottom: -7px;
+    }
+
+    &__form-field, &__form-textarea {
+        background-color: rgba($secondary, 0.07);
+        padding: 15px;
+        color: rgba($secondary, 0.5);
+    }
+
+    &__arrow {
+        height: 155px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include tablet {
+            height: 115px;
+        }
+
+        @include phone {
+            height: 100px;
+        }
+    }
+}

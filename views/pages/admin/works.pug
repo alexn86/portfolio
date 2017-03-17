@@ -1,0 +1,20 @@
+extends _template
+
+block variables
+    - var pageTitle = 'Страница &laquo;Мои работы&raquo;'
+
+block content
+
+    .admin-works
+        .admin-works__title.page-header Добавить работу
+        form.admin-works__form(name="works" action='/works/add' method="POST" enctype="multipart/form-data")
+            input.admin-works__input.admin-input(name="name" type="text" placeholder="Название проекта" required)
+            input.admin-works__input.admin-input(name="tech" placeholder="Технологии" required)
+            input.admin-works__input.admin-input(name="link" placeholder="Ссылка")
+            .admin-works__upload
+                input.admin-works__upload-input(name="photo" type="file" required accept="image/*")
+                span.admin-works__upload-text Загрузить картинку
+            .admin-works__upload-status
+            input.btn(type="submit" value="Добавить")
+
+

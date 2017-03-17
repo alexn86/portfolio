@@ -1,0 +1,103 @@
+extends ../_template
+
+block variables
+    - var title = 'Мои работы'
+
+block content
+
+    include ../common/_variables
+
+    -
+        var menuList = [
+            {
+                'name': 'Отправить',
+                'href': '#',
+                'class': ['equal', 'submit']
+            },
+            {
+                'name': 'Очистить',
+                'href': '#',
+                'class': ['equal', 'transparent', 'reset']
+            }
+        ]
+
+
+    .wrapper
+
+        main.content
+
+            include ../common/hero
+
+            section.slider
+
+                .slider__triangles.triangles
+                    svg(viewBox='0 0 1000 110' preserveAspectRatio='none').triangles__svg
+                        polygon(points='0,0 0,110 500,110').slider__triangles-left
+                        polygon(points='500,110 1000,0 1000,110').slider__triangles-right
+
+                .slider__top
+                    .slider__title Мои работы
+
+                .slider__main
+
+                    .slider__desc
+                        each work in works
+                            .slider__desc-container
+                                .block-title.slider__desc-title= work.name
+                                .slider__desc-skills= work.tech
+                                a(href=work.link).slider__desc-btn Посмотреть сайт
+
+                    .slider__preview
+                        +slider('slider', works)
+                    .slider__btns
+                        a.slider__btn.slider__btn_left
+                            +slider('slider', works)
+                            +svg('slider__btn-arrow','portf_arrow_down')
+                        a.slider__btn.slider__btn_right
+                            +slider('slider', works)
+                            +svg('slider__btn-arrow','portf_arrow_up')
+
+            section.reviews
+
+                .reviews__title
+                    span.wrap Что обо мне
+                    span.wrap говорят
+
+                ul.reviews__list
+                    li.reviews__item
+                        .reviews__avatar-box
+                            img(src='assets/img/review1.jpg').reviews__avatar
+                        p.reviews__text
+                            | Этот парень проходил обучение веб-разработке не где-то s
+                            |   а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        p.reviews__author-name Ковальчук Дмитрий
+                        p.reviews__author-work - основатель Loftschool
+                    li.reviews__item
+                        .reviews__avatar-box
+                            img(src='assets/img/review2.jpg').reviews__avatar
+                        p.reviews__text
+                            | Этот код выдержеит любые испытания. Только пожалуйста,
+                            | не загружается сайт на слишком старых браузерах!
+                        p.reviews__author-name Сабанцев Владимир
+                        p.reviews__author-work - преподаватель
+
+                .reviews__form-wrapper
+
+                    .reviews__form-container
+
+                        form.form.reviews__form(name="contact" action='/contact1' method="POST")
+                            p.block-title.form__title Связаться со мной
+                            .form__field-group
+                                input.form__field.form__textfield.reviews__form-field(placeholder='Ваше имя' name='name' data-field='имя')
+                            .form__field-group
+                                input.form__field.form__textfield.reviews__form-field(placeholder='Ваше email' name='email' data-field='email')
+                            .form__field-group
+                                textarea.form__field.form__textarea.reviews__form-textarea(placeholder='Ваше сообщение' name='message' data-field='сообщение')
+
+                        nav.form-menu
+                            +menu('form-menu', menuList)
+
+                .reviews__arrow
+                    +svg('button-arrow-up','arrow_down')
+
+        include ../common/footer

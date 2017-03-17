@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Школа онлайн образования",
+    "skills": "HTML, CSS, JAVASCRIPT",
+    "src": "assets/img/work-1.png",
+    "link": "#"
+  },
+  {
+    "name": "Itloft",
+    "skills": "HTML, CSS, JAVASCRIPT",
+    "src": "assets/img/work-2.png",
+    "link": "#"
+  },
+  {
+    "name": "Портал видеуроков",
+    "skills": "HTML, CSS, JAVASCRIPT",
+    "src": "assets/img/work-3.png",
+    "link": "#"
+  },
+  {
+    "name": "ATMA YOGA",
+    "skills": "HTML, CSS, JAVASCRIPT",
+    "src": "assets/img/work-4.png",
+    "link": "#"
+  }
+]

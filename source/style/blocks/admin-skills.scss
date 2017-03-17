@@ -1,0 +1,39 @@
+.admin-skills {
+
+    &-group {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__title {
+            //font-weight: 500;
+            //margin-bottom: 15px;
+        }
+
+        &__item {
+            margin-right: 70px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__list {
+        padding-left: 20px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        &-name {
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        &-input {
+            height: 32px;
+            width: 46px;
+            text-align: center;
+            margin-right: 10px;
+        }
+    }
+}

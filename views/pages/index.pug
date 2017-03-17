@@ -1,0 +1,91 @@
+extends ../_template
+
+block variables
+    - var title = 'Главная'
+
+block content
+
+    include ../common/_variables
+
+    -
+        var menuListFront = [
+            {
+                'name': 'Мои работы',
+                'href': 'works',
+                'class': []
+            },
+            {
+                'name': 'Обо мне',
+                'href': 'about',
+                'class': []
+            },
+            {
+                'name': 'Блог',
+                'href': 'blog',
+                'class': []
+            }
+        ]
+
+    -
+        var menuListBack = [
+            {
+                'name': 'На главную',
+                'href': '#',
+                'class': ['equal', 'flip']
+            },
+            {
+                'name': 'Войти',
+                'href': '#',
+                'class': ['equal', 'submit']
+            }
+        ]
+
+    include ../common/preloader
+
+    main.hero.hero_welcome
+
+        video(src='assets/img/night.mp4' autoplay muted playsinline loop).hero__video-file
+
+        .hero__bg
+            //img(src='assets/img/night_no_bg_big.png').hero__bg-img
+
+        section.hero__container.hero__container_welcome
+            .hero__container-front
+                .user-container
+                    .user
+                        .user__avatar-box.user__avatar-box_welcome
+                            img.user__avatar(src='assets/img/avatar.png')
+                        p.user__name.user__name_welcome Александр Никольский
+                        p.user__title Личный сайт веб разработчика
+                        //.socials-container
+                        +socials('socials', socialsList)
+                nav.form-menu
+                    +menu('form-menu', menuListFront)
+            .hero__container-back
+                .user-container
+                    form.form.hero__form(name="auth" action="/login" method="POST")
+                        p.form__title.hero__form-title Авторизуйтесь
+                        .form__field-group
+                            input.form__field.form__textfield.hero__form-field(type='text' placeholder='Логин' name='login' data-field='логин')
+                            .form__icon-container
+                                +svg('form__icon form__icon-login','login')
+                        .form__field-group
+                            input.form__field.form__textfield.hero__form-field(type='password' placeholder='Пароль' name='password' data-field='пароль')
+                            .form__icon-container
+                                +svg('form__icon form__icon-password','password')
+                        .form__field-group
+                            input.form__checkbox(type='checkbox' id='human' name='human' required)
+                            label.form__label(for='human') Я человек
+                        p.form__text Вы точно не робот?
+                        .form__field-group
+                            .form__field-group-inline
+                                input.form__radio(type='radio' id='yes' name='answer')
+                                label.form__label(for='yes') Да
+                            .form__field-group-inline
+                                input.form__radio(type='radio' id='no' name='answer')
+                                label.form__label(for='no') Не уверен
+                nav.form-menu
+                    +menu('form-menu', menuListBack)
+        a.auth-button(href='#') Авторизоваться
+        p.hero__copyright.copyright
+            include ../common/_copyright

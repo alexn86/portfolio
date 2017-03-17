@@ -1,0 +1,324 @@
+//@import 'common/sprite';
+//@import 'common/fonts';
+//@import 'common/variables';
+//@import 'common/user';
+//@import 'common/socials';
+//@import 'common/menu';
+//@import 'common/form';
+
+@import 'common/**/*.scss';
+@import 'blocks/**/*.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: {
+        size: #{$font-size}px;
+        family: $font-family;
+        weight: normal;
+    }
+    line-height: $line-height;
+    min-width: 320px;
+    //max-width: 1800px;
+
+    @include desktop {
+        font-size: #{$font-size}px;
+    }
+
+    @include laptop {
+        //font-size: #{$font-size - 1}px;
+    }
+
+    @include tablet {
+        //font-size: #{$font-size - 2}px;
+    }
+
+    @include phone {
+        //font-size: #{$font-size - 2}px;
+    }
+}
+
+body {
+    margin: 0;
+    color: $font-color;
+
+    @include tablet {
+        font-size: #{$font-size - 2}px;
+    }
+}
+
+html, body {
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: underline;
+    color: $primary-mid;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.wrap {
+    display: block;
+
+    //@include tablet {
+    //    display: inline-block;
+    //}
+}
+
+.wrapper {
+    min-height: 100%;
+    //min-width: 1200px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+.button-hamburger {
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    right: 30px;
+    top: 30px;
+    fill: $secondary;
+    cursor: pointer;
+
+    @include phone {
+        width: 25px;
+        height: 25px;
+        right: 50px;
+        top: 50px;
+    }
+}
+
+.button-arrow-down {
+    width: 26px;
+    height: 16px;
+    //@include centered(x);
+    //bottom: 70px;
+    //top: -50px;
+    fill: rgba($secondary, 0.7);
+    z-index: 10;
+    cursor: pointer;
+
+    &:hover {
+        fill: rgba($secondary, 1);
+    }
+}
+
+.button-arrow-up {
+    @extend .button-arrow-down;
+    transform: rotate(180deg);
+    //transform-origin: 25% 25%;
+}
+
+.section-title {
+    @include heading('large');
+    //color: $secondary-text-color;
+    text-align: center;
+    //display: inline-block;
+    //background: url('../img/stars2.png') center center no-repeat;
+    //background-size: contain;
+    //padding: 35px 0 40px;
+    position: relative;
+    //padding-bottom: 10px;
+    //margin-bottom: 50px;
+    width: 100%;
+}
+
+//.section-title::after {
+//    content: '';
+//    @include centered();
+//    background: url('../img/stars2.png')  no-repeat;
+//    height: 120px;
+//    width: 185px;
+//}
+
+.block-title {
+    @include heading('medium');
+    //color: $secondary-text-color;
+    text-align: center;
+    padding-bottom: 15px;
+    position: relative;
+    margin-bottom: 25px;
+
+    //@include desktop {
+    //    padding-bottom: 15px;
+    //    margin-bottom: 25px;
+    //}
+
+    &::after {
+        content: '';
+        @include centered(x);
+        bottom: 0;
+        width: 89px;
+        height: 3px;
+        //background-color: $secondary-text-color;
+    }
+}
+
+.block-text {
+    color: $secondary-text-color;
+}
+
+.auth-button {
+    position: absolute;
+    top: 25px;
+    //right: calc((100% - 1200px) / 7.5 + 20px);
+    right: 25px;
+    border: 1px solid $secondary;
+    //width: 180px;
+    //height: 45px;
+    padding: 0 28px;
+    line-height: 43px;
+    text-align: center;
+    font-weight: 500;
+    font-style: normal;
+    display: block;
+    color: $primary-text-color;
+    text-decoration: none;
+
+    &:hover {
+        background-color: $primary-dark;
+        border-color: $primary-dark;
+        cursor: pointer;
+    }
+
+    @include phone {
+        @include centered(x);
+        right: auto;
+        top: 10px;
+        line-height: 38px;
+        padding: 0 20px;
+    }
+}
+
+.copyright {
+    text-align: center;
+    font: {
+        weight: 300;
+        style: normal;
+    }
+
+    &_in_footer {
+        bottom: 0;
+        height: 38px;
+        line-height: 38px;
+        background-color: rgba($primary-dark, 0.85);
+    }
+
+    .wrap {
+        display: inline-block;
+    }
+
+    .wrap:first-of-type::after {
+        content: ' |';
+
+        @include phone {
+            content: '';
+        }
+    }
+
+    @include phone {
+        .wrap {
+            display: block;
+        }
+    }
+}
+
+.section-head {
+    position: relative;
+    height: 295px;
+    margin-top: -295px;
+
+    &__triangle {
+        display: block;
+        height: 110px;
+        position: absolute;
+        top: 0;
+        fill: rgba(#0d1120, 0.85);
+        width: 50%;
+
+        &_left {
+            left: 0;
+        }
+
+        &_right {
+            right: 0;
+        }
+    }
+
+    &__title {
+        //@include centered(x);
+        @include heading('large');
+        color: $primary-text-color;
+        z-index: 10;
+        height: 185px;
+        //line-height: 185px;
+        bottom: 0;
+        background-color: rgba(#0d1120, 0.85);
+        width: 100%;
+        text-align: center;
+        position: relative;
+
+        &::after {
+            content: '';
+            @include centered();
+            background: url('../img/stars22.png') center center no-repeat;
+            height: 170px;
+            width: 265px;
+        }
+    }
+}
+
+
+.page-title {
+    font-size: 21px;
+    line-height: (34/21);
+    margin-bottom: 40px;
+    font-weight: 500;
+
+    @include phone {
+        margin-bottom: 25px;
+    }
+}
+
+.page-header {
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.btn {
+    line-height: 45px;
+    color: $primary-text-color;
+    padding: 0 20px;
+    background-color: $primary-mid;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    outline: none;
+
+    @include phone {
+        line-height: 40px;
+    }
+}

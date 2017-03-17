@@ -1,0 +1,45 @@
+extends ../_template
+
+block variables
+    - var title = 'Админка'
+
+block content
+
+    -
+        var menu = [
+            {
+                'name': 'Обо мне',
+                'class': ['active']
+            },
+            {
+                'name': 'Блог',
+                'class': []
+            },
+            {
+                'name': 'Мои работы',
+                'class': []
+            }
+        ]
+
+    .wrapper
+
+        .admin
+
+            video(src='assets/img/night.mp4' autoplay muted playsinline loop).hero__video-file
+
+            header.admin__header
+                .admin__header-title Панель администрирования
+                a.admin__header-back Вернуться назад
+
+            nav.admin__menu.admin-menu
+                +menu('admin-menu', menu)
+
+            main.admin__main
+                ul.admin__main-tabs
+                    li.admin__main-tab.admin__main-tab_active
+                        include admin/about
+                    li.admin__main-tab
+                        include admin/blog
+                    li.admin__main-tab
+                        include admin/works
+

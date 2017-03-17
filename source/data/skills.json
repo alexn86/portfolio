@@ -1,0 +1,20 @@
+{
+  "skills": {
+    "Frontend": {
+      "HTML5": 95,
+      "CSS3": 85,
+      "JavaScript & jQuery": 50
+    },
+    "Backend": {
+      "PHP": 50,
+      "mySQL": 70,
+      "Node.js & npm": 5,
+      "Mongo.db": 0
+    },
+    "WorkFlow": {
+      "Git": 60,
+      "Gulp": 60,
+      "Bower": 80
+    }
+  }
+}

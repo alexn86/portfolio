@@ -1,0 +1,62 @@
+$circeRadius: 45;
+$strokeWidth: 20;
+$circeSize: $circeRadius * 2 + $strokeWidth;
+$pi: 3.14;
+$circleLength: 2 * $circeRadius * $pi;
+$percentStep: 5;
+
+.skill {
+    position: relative;
+    //width: 110px;
+    //height: 110px;
+
+    &__circle {
+        //width: #{$circeSize / $font-size}rem;
+        //height: #{$circeSize / $font-size}rem;
+        fill: none;
+        stroke-width: $strokeWidth;
+        opacity: 0;
+        transition: opacity 1s;
+
+        &-first {
+            stroke: #dfdcd5;
+        }
+
+        &-second {
+            stroke: $primary-mid;
+            stroke-dasharray: 0 $circleLength;
+            opacity: 0;
+            transition: all 1s;
+        }
+
+        &_animated {
+            opacity: 1;
+
+            & + .skill__name {
+                opacity: 1;
+            }
+
+            @for $i from 0 through round(100 / $percentStep) {
+                .skill__circle_percent_#{$i * $percentStep} {
+                    stroke-dasharray: #{$circleLength * $i * $percentStep / 100} #{$circleLength};
+                    opacity: #{$i * $percentStep / 100};
+                }
+            }
+        }
+    }
+
+
+
+    &__name {
+        color: $primary-dark;
+        content: '';
+        @include centered();
+        font: {
+            size: 13px;
+            weight: 500;
+        }
+        line-height: (15/13);
+        text-align: center;
+        opacity: 0;
+    }
+}
