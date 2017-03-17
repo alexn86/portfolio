@@ -79,10 +79,10 @@ block content
                         p.form__text Вы точно не робот?
                         .form__field-group
                             .form__field-group-inline
-                                input.form__radio(type='radio' id='yes' name='answer')
+                                input.form__radio(type='radio' id='yes' name='answer' value="yes")
                                 label.form__label(for='yes') Да
                             .form__field-group-inline
-                                input.form__radio(type='radio' id='no' name='answer')
+                                input.form__radio(type='radio' id='no' name='answer' value="no")
                                 label.form__label(for='no') Не уверен
                 nav.form-menu
                     +menu('form-menu', menuListBack)
