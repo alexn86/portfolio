@@ -82,7 +82,8 @@
         });
 
         sendAjaxJson('/login', data, function (data) {
-            showModal(data);
+            // showModal(data);
+            location.href = '/admin';
         });
     }
 
