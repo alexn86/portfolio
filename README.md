@@ -2,7 +2,7 @@
 
 > Сборка работает на gulp версии 4.0.
  
-> Используетяс Node.js + Express + MongoDB 
+> Используется Node.js + Express + MongoDB 
 
 > Посмотреть можно <a href="http://alexnikolskiy.ru:3000/" target="_blank">тут<a>
 
