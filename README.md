@@ -4,7 +4,7 @@
  
 > Используется Node.js + Express + MongoDB 
 
-> Посмотреть можно <a href="http://alexnikolskiy.ru:3000/" target="_blank">тут<a>
+> Посмотреть можно <a href="http://www.nikolskiy.me/" target="_blank">тут<a>
 
 #### Для начала работы
 
